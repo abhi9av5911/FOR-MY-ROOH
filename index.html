@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You 🤍</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #fce7f3, #e0f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      animation: fadeIn 2s ease;
+    }
+
+    h2 {
+      color: #374151;
+    }
+
+    p {
+      color: #6b7280;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Hey you 🤍</h2>
+    <p id="msg"></p>
+  </div>
+<script>
+  const text = "I know I hurt you.\n\nI won’t justify it.\nYour feelings matter to me.\n\nI’m here. Always.";
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      document.getElementById("msg").innerHTML += 
+        text[i] === "\n" ? "<br>" : text[i];
+      i++;
+      setTimeout(type, 40);
+    }
+  }
+  type();
+</script>
+</body>
+</html>
