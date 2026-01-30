@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Chhoti Bachchi 💗</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffb6c1, #ffd1dc, #ffe4e1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 24px;
+    max-width: 340px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.35);
+    animation: popIn 1.5s ease;
+  }
+
+  h2 {
+    color: #ff4f87;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .animals {
+    font-size: 28px;
+    margin: 15px 0;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .heart {
+    font-size: 22px;
+    animation: heartbeat 1.4s infinite;
+    display: inline-block;
+  }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  @keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  .sparkle {
+    position: absolute;
+    font-size: 14px;
+    animation: sparkle 6s linear infinite;
+    opacity: 0.6;
+  }
+
+  @keyframes sparkle {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- floating sparkles -->
+<span class="sparkle" style="left:10%">✨</span>
+<span class="sparkle" style="left:30%">💗</span>
+<span class="sparkle" style="left:50%">✨</span>
+<span class="sparkle" style="left:70%">💖</span>
+<span class="sparkle" style="left:90%">✨</span>
+
+<div class="card">
+  <h2>Hey chhoti bachchi 💕</h2>
+
+  <div class="animals">🐰 🧸 🐶 🐻 🐾</div>
+
+  <p id="msg"></p>
+
+  <div class="heart">💗</div>
+</div>
+
+<script>
+  const text =
+    "I know meri chhoti bachchi hurt hui hai...\n\n" +
+    "Main excuse nahi de raha hu.\n" +
+    "Bas itna kehna chahta hu ki tumhari feelings mere liye bohot important hain.\n\n" +
+    "Main yahin hoon betu.\n" +
+    "Pyaar se. Shanti se.\n" +
+    "tum sabse zyada special ho,sabse precious ho jaan. 💕";
+
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      document.getElementById("msg").innerHTML +=
+        text[i] === "\n" ? "<br>" : text[i];
+      i++;
+      setTimeout(type, 40);
+    }
+  }
+  type();
+</script>
+
+</body>
+</html>
